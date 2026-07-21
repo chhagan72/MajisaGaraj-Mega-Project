@@ -1,0 +1,367 @@
+/* ==========================================================================
+   DESIGN COMPONENT SYSTEM TOKEN SYSTEM (SAAS PURE LIGHT PRESET)
+   ========================================================================== */
+:root {
+  --app-bg: #f8fafc;
+  --surface-bg: #ffffff;
+  --panel-card: #ffffff;
+  --border-line: #e2e8f0;
+  --text-main: #0f172a;
+  --text-secondary: #475569;
+  --text-muted: #94a3b8;
+  --accent-blue: #2563eb;
+  --accent-blue-hover: #1d4ed8;
+  --accent-glow: rgba(37, 99, 235, 0.06);
+  --btn-danger-border: #fee2e2;
+  --btn-danger-bg: #dc2626;
+}
+
+/* ==========================================================================
+   CORE WORKSPACE ENVELOPE CONFIGURATIONS (ANTI-SCROLL RESTRUCTURES)
+   ========================================================================== */
+.dashboard-root {
+  height: 100vh !important;
+  width: 100vw !important;
+  max-width: 100%;
+  max-height: 100%;
+  overflow: hidden !important; /* Prevents global page level scroll breaks */
+  background-color: var(--app-bg);
+  color: var(--text-main);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+/* Pinned Desktop Navigation Sidebar Panel */
+.dashboard-sidebar {
+  width: 280px;
+  min-width: 280px;
+  height: 100vh !important;
+  position: sticky !important;
+  top: 0;
+  left: 0;
+  background-color: var(--surface-bg);
+  border-right: 1px solid var(--border-line);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), margin-left 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  z-index: 1040;
+}
+
+.sidebar-hidden {
+  margin-left: -280px;
+}
+
+/* Isolated Core Content Workspace Container Scroll Area */
+.main-content-wrapper {
+  height: 100vh !important;
+  overflow-y: auto !important; /* Confines metric pages vertical scrolling strictly here */
+  display: flex;
+  flex-direction: column;
+  background-color: var(--app-bg);
+}
+
+.dashboard-body-content {
+  flex-grow: 1;
+  padding: 28px;
+}
+
+.brand-text {
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  color: var(--text-main);
+  font-size: 1.15rem;
+}
+
+.brand-sub {
+  color: var(--accent-blue);
+}
+
+.btn-close-sidebar {
+  background: transparent;
+  border: none;
+  color: var(--text-secondary);
+  font-size: 1.25rem;
+  transition: color 0.2s ease;
+}
+
+.btn-close-sidebar:hover {
+  color: var(--btn-danger-bg);
+}
+
+.menu-category {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  padding: 14px 10px 6px 10px;
+}
+
+/* Side Menu Panel Tab Navigation Item Triggers */
+.nav-panel-btn {
+  width: 100%;
+  background: transparent;
+  border: none;
+  color: var(--text-secondary);
+  padding: 11px 16px;
+  text-align: left;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 0.92rem;
+  font-weight: 500;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.nav-panel-btn:hover {
+  color: var(--accent-blue);
+  background-color: var(--accent-glow);
+  transform: translateX(4px);
+}
+
+.nav-panel-btn.active {
+  background-color: var(--accent-glow) !important;
+  color: var(--accent-blue) !important;
+  font-weight: 600;
+  border-left: 3.5px solid var(--accent-blue);
+  border-radius: 0 10px 10px 0;
+}
+
+/* ==========================================================================
+   STICKY TOP SYSTEM BAR MANAGEMENT HEADER
+   ========================================================================== */
+.top-system-bar {
+  background-color: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border-line);
+  height: 75px;
+  min-height: 75px;
+  position: sticky !important;
+  top: 0;
+  z-index: 1030;
+}
+
+/* Hamburger Workspace Control Trigger */
+.toggle-sidebar-btn {
+  background: transparent;
+  border: none;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding: 8px;
+}
+
+.burger-bar {
+  width: 20px;
+  height: 2px;
+  background-color: var(--text-main);
+  transition: all 0.2s ease;
+}
+
+.navbar-heading {
+  color: var(--text-secondary);
+  font-size: 0.82rem;
+  letter-spacing: 1.5px;
+  font-weight: 600;
+}
+
+/* Clean Translucent Badges Controls Triggers */
+.utility-badge-btn {
+  background-color: var(--surface-bg);
+  border: 1px solid var(--border-line);
+  color: var(--text-secondary);
+  padding: 8px 14px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  border-radius: 10px;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.utility-badge-btn:hover {
+  background-color: var(--surface-bg);
+  border-color: var(--accent-blue);
+  color: var(--accent-blue);
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.08);
+}
+
+/* Counter Alert Pulse Indicators Rings */
+.matrix-counter-dot {
+  position: absolute;
+  top: -4px;
+  right: -4px;
+  background-color: #ff0055;
+  color: white;
+  font-size: 0.65rem;
+  font-weight: bold;
+  border-radius: 50%;
+  width: 18px;
+  height: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid var(--surface-bg);
+}
+
+.alert-pulse {
+  animation: beaconPulse 2s infinite ease-in-out;
+}
+
+/* Identity Profile Dropdown Items Customizations Overrides */
+.profile-badge-dropdown {
+  background: var(--surface-bg) !important;
+  border: 1px solid var(--border-line) !important;
+  border-radius: 12px !important;
+  padding: 6px 14px 6px 6px !important;
+  color: var(--text-main) !important;
+  transition: all 0.2s ease !important;
+}
+
+.profile-badge-dropdown:hover {
+  border-color: var(--text-secondary) !important;
+}
+
+.avatar-placeholder {
+  width: 32px;
+  height: 32px;
+  background-color: var(--accent-glow);
+  color: var(--accent-blue);
+  font-weight: 700;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.profile-custom-dropdown {
+  background-color: var(--surface-bg) !important;
+  border: 1px solid var(--border-line) !important;
+  border-radius: 14px !important;
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08) !important;
+  padding: 8px !important;
+}
+
+.profile-custom-dropdown .dropdown-item {
+  color: var(--text-secondary) !important;
+  border-radius: 8px;
+  padding: 8px 14px;
+  font-size: 0.9rem;
+}
+
+.profile-custom-dropdown .dropdown-item:hover {
+  background-color: var(--accent-glow) !important;
+  color: var(--accent-blue) !important;
+}
+
+/* ==========================================================================
+   DISPLAY SYSTEM TELEMETRY METRIC PANELS CARDS
+   ========================================================================== */
+.metric-panel-card {
+  background-color: var(--panel-card);
+  border: 1px solid var(--border-line);
+  border-radius: 20px;
+  box-shadow: 0 4px 6px -1px rgba(15, 23, 42, 0.02), 0 2px 4px -1px rgba(15, 23, 42, 0.01);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.metric-panel-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px -4px rgba(15, 23, 42, 0.06);
+  border-color: var(--btn-danger-bg)!important;
+}
+
+.section-title {
+  color: var(--text-main);
+  font-weight: 800;
+  letter-spacing: -0.5px;
+}
+
+.system-status-badge {
+  background-color: #f1f5f9;
+  color: #475569;
+  padding: 6px 14px;
+  border-radius: 8px;
+  font-weight: 600;
+  border: 1px solid var(--border-line);
+}
+
+.value-display {
+  color: var(--text-main);
+  letter-spacing: -0.5px;
+  font-size: 1.75rem;
+}
+
+.card-icon-badge {
+  font-size: 1.35rem;
+  padding: 8px;
+  background-color: var(--app-bg);
+  border-radius: 10px;
+}
+
+/* Premium Disconnect CTA trigger button */
+.btnprodanger {
+  background-color: transparent !important;
+  border: 1.5px solid #fee2e2 !important;
+  color: #dc2626 !important;
+  border-radius: 12px !important;
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition: all 0.2s ease-in-out !important;
+}
+
+.btnprodanger:hover {
+  background-color: var(--btn-danger-bg) !important;
+  color: #ffffff !important;
+  box-shadow: 0 4px 12px rgba(220, 38, 38, 0.15);
+  border-color: var(--btn-danger-bg) !important;
+}
+
+/* ==========================================================================
+   CSS PHYSICS SYSTEM INTERACTIVE HARDWARE ACCELERATED ANIMATIONS
+   ========================================================================== */
+.animate-fade-in-view {
+  animation: saasFadeIn 0.55s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-pulse-slow {
+  animation: surfacePulse 3s infinite ease-in-out;
+}
+
+@keyframes beaconPulse {
+  0% { box-shadow: 0 0 0 0 rgba(255, 0, 85, 0.4); }
+  70% { box-shadow: 0 0 0 8px rgba(255, 0, 85, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(255, 0, 85, 0); }
+}
+
+@keyframes saasFadeIn {
+  from { opacity: 0; transform: translateY(16px) scale(0.99); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@keyframes surfacePulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.85; }
+}
+
+/* ==========================================================================
+   ADAPTIVE FLUID LAYOUT DEVICE RESPONSIVE CONFIGURATIONS
+   ========================================================================== */
+@media (max-width: 768px) {
+  .dashboard-sidebar {
+    position: fixed !important;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    height: 100vh !important;
+    box-shadow: 15px 0 30px rgba(15, 23, 42, 0.08);
+  }
+  
+  .sidebar-hidden {
+    transform: translateX(-100%);
+    margin-left: -280px;
+  }
+  
+  .dashboard-body-content {
+    padding: 20px 16px;
+  }
+}

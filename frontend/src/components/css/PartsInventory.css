@@ -1,0 +1,219 @@
+/* frontend/src/css/PartsInventory.css */
+
+.fk-inventory-wrapper {
+    background-color: #f1f3f6;
+    padding: 10px;
+    border-radius: 8px;
+}
+
+.fk-loading-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 300px;
+    color: #878787;
+}
+
+/* Flipkart-style Product Card Core Container */
+.fk-product-card {
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+    overflow: hidden;
+    cursor: pointer;
+    background: #ffffff;
+    transition: transform 0.22s ease, box-shadow 0.22s ease;
+    width: 100%;
+}
+
+.fk-product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12);
+}
+
+/* Clear containment canvas area */
+.fk-image-canvas {
+    height: 200px;
+    width: 100%;
+    padding: 15px;
+    position: relative;
+    background-color: #ffffff;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+/* Image containment parameters scaling correctly */
+.fk-product-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transition: transform 0.2s ease;
+}
+
+.fk-product-card:hover .fk-product-img {
+    transform: scale(1.03);
+}
+
+/* Discount Ribbon */
+.fk-discount-badge {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    background: #388e3c;
+    color: #ffffff;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 2px 6px;
+    border-radius: 2px;
+    z-index: 10;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Stock Status bading strings */
+.fk-stock-status {
+    min-height: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.stock-badge {
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.stock-badge.out-of-stock {
+    color: #d32f2f;
+}
+
+.stock-badge.low-stock {
+    color: #ff6f00;
+    font-weight: bold;
+}
+
+/* Card Body Details elements mapping */
+.fk-category {
+    font-size: 11px;
+    letter-spacing: 0.3px;
+    color: #878787;
+    font-weight: 600;
+}
+
+.fk-title {
+    font-size: 14px;
+    color: #212121;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.fk-specs-text {
+    font-size: 12px;
+    color: #666666;
+    height: 18px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Pricing Section */
+.fk-sale-price {
+    font-size: 18px;
+    color: #212121;
+}
+
+.fk-original-price {
+    font-size: 13px;
+    color: #878787;
+}
+
+/* E-commerce action buttons configurations */
+.fk-btn-cart {
+    background-color: #ff9f00;
+    color: #ffffff;
+    border: none;
+    border-radius: 2px;
+    font-size: 13px;
+}
+
+.fk-btn-cart:hover {
+    background-color: #f59600;
+    color: #ffffff;
+}
+
+.fk-btn-buy {
+    background-color: #fb641b;
+    color: #ffffff;
+    border: none;
+    border-radius: 2px;
+    font-size: 13px;
+}
+
+.fk-btn-buy:hover {
+    background-color: #f35607;
+    color: #ffffff;
+}
+
+.fk-btn-cart:disabled, .fk-btn-buy:disabled {
+    background-color: #f0f0f0 !important;
+    color: #c0c0c0 !important;
+    cursor: not-allowed;
+}
+
+/* STANDALONE PAGE EXCLUSIVE CUSTOM VIEW DESIGNS */
+.fk-standalone-detail-page {
+    border: 1px solid #e0e0e0;
+    background-color: #ffffff;
+}
+
+/* Dynamic Gallery Canvas bounding container configuration */
+.fk-detail-gallery-main {
+    height: 380px; /* Elevated container window block size */
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #eef0f2;
+    background-color: #ffffff !important;
+    padding: 15px;
+    overflow: hidden;
+}
+
+/* Image containment parameters optimized to clearly fill the parent container canvas */
+.fk-standalone-hero-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Scales sharp and keeps clear without raw stretching */
+}
+
+.fk-gallery-thumb {
+    width: 60px;
+    height: 60px;
+    cursor: pointer;
+    flex-shrink: 0;
+    transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.fk-gallery-thumb:hover {
+    transform: scale(1.05);
+}
+
+.max-vh-50 {
+    max-height: 50vh;
+}
+
+/* Global Alert Floating Notification Toast */
+.fk-global-toast {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    background: #212121;
+    color: #ffffff;
+    padding: 12px 24px;
+    border-radius: 4px;
+    font-size: 13px;
+    z-index: 1100;
+    border-left: 4px solid #fb641b;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.25);
+}
+
+.text-mini {
+    font-size: 11px;
+}

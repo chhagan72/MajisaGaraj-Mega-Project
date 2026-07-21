@@ -1,0 +1,198 @@
+/* ==========================================================================
+   DESIGN COMPONENT SYSTEM TOKEN SYSTEM (SAAS LIGHT TONE TWO-WHEELER CORE)
+   ========================================================================== */
+:root {
+  --bike-app-bg: #f8fafc;
+  --bike-surface-bg: #ffffff;
+  --bike-panel-card: #ffffff;
+  --bike-border-line: #e2e8f0;
+  --bike-text-main: #0f172a;
+  --bike-text-secondary: #475569;
+  --bike-text-muted: #94a3b8;
+  --bike-accent-blue: #2563eb;
+  --bike-accent-blue-hover: #1d4ed8;
+  --bike-accent-glow: rgba(37, 99, 235, 0.06);
+}
+
+/* Slots Core Control Center Banner */
+.slots-banner-panel {
+  background: linear-gradient(135deg, #ffffff 0%, #f1f5f9 100%) !important;
+  border: 1px solid var(--bike-border-line) !important;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.02);
+}
+
+.slots-counter-display {
+  font-size: 2.5rem;
+  font-weight: 800;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: var(--bike-accent-blue);
+  text-shadow: 0 2px 10px rgba(37, 99, 235, 0.15);
+  line-height: 1;
+}
+
+.badge-pulse-status {
+  background-color: rgba(22, 163, 74, 0.08) !important;
+  color: #16a34a !important;
+  border: 1px solid rgba(22, 163, 74, 0.2) !important;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  padding: 6px 12px !important;
+  border-radius: 8px;
+}
+
+/* Premium White Surface Forms & Telemetry Cards */
+.booking-form-card, .pipeline-tracking-card {
+  background-color: var(--bike-surface-bg) !important;
+  border: 1px solid var(--bike-border-line) !important;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.03), 0 8px 10px -6px rgba(15, 23, 42, 0.03);
+}
+
+/* Premium Form Elements Focus System */
+.pro-form-input, .pro-form-select {
+  background-color: #f8fafc !important;
+  border: 1.5px solid #e2e8f0 !important;
+  color: var(--bike-text-main) !important;
+  padding: 11px 14px !important;
+  font-size: 0.95rem !important;
+  border-radius: 10px !important;
+  transition: all 0.2s ease-in-out !important;
+}
+
+.pro-form-input::placeholder {
+  color: var(--bike-text-muted);
+}
+
+.pro-form-input:focus, .pro-form-select:focus {
+  background-color: var(--bike-surface-bg) !important;
+  border-color: var(--bike-accent-blue) !important;
+  box-shadow: 0 0 0 3.5px rgba(37, 99, 235, 0.14) !important;
+}
+
+/* Interactive Water Droplet Checkboxes Grid */
+.parts-checkbox-wrapper {
+  border: 1.5px solid #e2e8f0;
+  border-radius: 10px;
+  background-color: #f8fafc;
+  cursor: pointer;
+  padding: 10px 14px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.parts-checkbox-wrapper:hover {
+  border-color: var(--bike-text-secondary);
+  background-color: #f1f5f9;
+}
+
+.parts-checkbox-wrapper.selected {
+  border-color: var(--bike-accent-blue) !important;
+  background-color: var(--bike-accent-glow) !important;
+}
+
+.parts-checkbox-wrapper .form-check-input {
+  border-color: #cbd5e1;
+  cursor: pointer;
+}
+
+.parts-checkbox-wrapper .form-check-input:checked {
+  background-color: var(--bike-accent-blue);
+  border-color: var(--bike-accent-blue);
+}
+
+/* Clean Gloss Action Call Button */
+.btn-pro-action {
+  background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%) !important;
+  color: #ffffff !important;
+  border: none !important;
+  border-radius: 12px !important;
+  font-size: 0.95rem;
+  letter-spacing: 0.5px;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2) !important;
+}
+
+.btn-pro-action:hover {
+  filter: brightness(1.05);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(37, 99, 235, 0.3) !important;
+}
+
+.btn-pro-action:disabled {
+  background: #e2e8f0 !important;
+  color: #94a3b8 !important;
+  box-shadow: none !important;
+  cursor: not-allowed;
+  transform: none !important;
+}
+
+/* Real-Time Pipeline Management Telemetry Rows */
+.pipeline-row-item {
+  background-color: #f8fafc !important;
+  border: 1px solid var(--bike-border-line) !important;
+  border-radius: 14px;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.pipeline-row-item:hover {
+  transform: translateX(4px);
+  border-color: var(--bike-accent-blue);
+  background-color: var(--bike-surface-bg) !important;
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.03);
+}
+
+/* Pure SaaS High Contrast Status Pills */
+.status-pill {
+  padding: 5px 12px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  border-radius: 8px;
+  display: inline-block;
+  letter-spacing: 0.5px;
+}
+
+.phase-pending { background-color: rgba(217, 119, 6, 0.08); color: #d97706; border: 1px solid rgba(217, 119, 6, 0.2); }
+.phase-to-do { background-color: rgba(71, 85, 105, 0.08); color: #475569; border: 1px solid rgba(71, 85, 105, 0.2); }
+.phase-in-progress { background-color: rgba(37, 99, 235, 0.08); color: #2563eb; border: 1px solid rgba(37, 99, 235, 0.2); }
+.phase-in-review { background-color: rgba(124, 58, 237, 0.08); color: #7c3aed; border: 1px solid rgba(124, 58, 237, 0.2); }
+.phase-done { background-color: rgba(22, 163, 74, 0.08); color: #16a34a; border: 1px solid rgba(22, 163, 74, 0.2); }
+
+/* .text-emerald { color: #16a34a !important; font-weight: 700; } */
+.admin-remarks-tray { 
+  background-color: rgba(217, 119, 6, 0.04); 
+  border: 1px dashed rgba(217, 119, 6, 0.2); 
+  border-radius: 8px;
+}
+.parts-breakdown-tray {
+  border-top: 1px solid var(--bike-border-line) !important;
+}
+
+/* Custom Translucent Alerts */
+.alert-success {
+  background-color: rgba(240, 253, 244, 0.8) !important;
+  color: #16a34a !important;
+  border: 1px solid rgba(22, 163, 74, 0.2) !important;
+  border-radius: 10px;
+}
+
+.alert-danger {
+  background-color: rgba(254, 242, 242, 0.8) !important;
+  color: #dc2626 !important;
+  border: 1px solid rgba(220, 38, 38, 0.2) !important;
+  border-radius: 10px;
+}
+
+/* Micro-Animations Reveal Engine */
+.animate-fade-in {
+  animation: cleanReveal 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes cleanReveal {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}

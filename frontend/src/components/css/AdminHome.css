@@ -1,0 +1,423 @@
+/* ==========================================================================
+   DESIGN COMPONENT SYSTEM TOKEN SYSTEM (SAAS PURE LIGHT ADMIN CORE)
+   ========================================================================== */
+:root {
+  --admin-app-bg: #f8fafc;
+  --admin-surface-bg: #ffffff;
+  --admin-panel-card: #ffffff;
+  --admin-border-line: #e2e8f0;
+  --admin-text-main: #0f172a;
+  --admin-text-secondary: #475569;
+  --admin-text-muted: #94a3b8;
+  --admin-accent-red: #e11d48;
+  --admin-accent-red-hover: #be123c;
+  --admin-accent-glow: rgba(225, 29, 72, 0.05);
+  --admin-table-header-bg: #f1f5f9;
+}
+
+/* ==========================================================================
+   CORE WORKSPACE ENVELOPE CONFIGURATIONS (ANTI-SCROLL COLD LOCK)
+   ========================================================================== */
+.dashboard-root {
+  height: 100vh !important;
+  width: 100vw !important;
+  max-width: 100%;
+  max-height: 100%;
+  overflow: hidden !important; /* Locks structural application bounds from shifting */
+  background-color: var(--admin-app-bg);
+  color: var(--admin-text-main);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+/* Enhanced Pinned Navigation Admin Sidebar Panel */
+.dashboard-sidebar {
+  width: 280px;
+  min-width: 280px;
+  height: 100vh !important;
+  position: sticky !important;
+  top: 0;
+  left: 0;
+  background-color: var(--admin-surface-bg);
+  border-right: 1px solid var(--admin-border-line);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), margin-left 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  z-index: 1040;
+}
+
+.sidebar-hidden {
+  margin-left: -280px;
+}
+
+/* Isolated Main Workspace Scroll Container */
+.main-content-wrapper {
+  height: 100vh !important;
+  overflow-y: auto !important; /* Confines system pages vertical scrolling strictly here */
+  display: flex;
+  flex-direction: column;
+  background-color: var(--admin-app-bg);
+}
+
+.dashboard-body-content {
+  flex-grow: 1;
+  padding: 28px;
+}
+
+.brand-text {
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  color: var(--admin-text-main);
+  font-size: 1.15rem;
+}
+
+.brand-sub {
+  color: var(--admin-accent-red);
+}
+
+.btn-close-sidebar {
+  background: transparent;
+  border: none;
+  color: var(--admin-text-secondary);
+  font-size: 1.25rem;
+  transition: color 0.2s ease;
+}
+
+.btn-close-sidebar:hover {
+  color: var(--admin-accent-red);
+}
+
+.menu-category {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+  color: var(--admin-text-muted);
+  text-transform: uppercase;
+  padding: 14px 10px 6px 10px;
+}
+
+/* Side Menu Panel Tab Action Items Buttons */
+.nav-panel-btn {
+  width: 100%;
+  background: transparent;
+  border: none;
+  color: var(--admin-text-secondary);
+  padding: 11px 16px;
+  text-align: left;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 0.92rem;
+  font-weight: 500;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.nav-panel-btn:hover {
+  color: var(--admin-accent-red);
+  background-color: var(--admin-accent-glow);
+  transform: translateX(4px);
+}
+
+.nav-panel-btn.active {
+  background-color: var(--admin-accent-glow) !important;
+  color: var(--admin-accent-red) !important;
+  font-weight: 600;
+  border-left: 3.5px solid var(--admin-accent-red);
+  border-radius: 0 10px 10px 0;
+}
+
+/* ==========================================================================
+   TOP SYSTEM CONTROL NAVIGATION HEADER (GLASS MORPHISM PRESET)
+   ========================================================================== */
+.top-system-bar {
+  background-color: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--admin-border-line);
+  height: 75px;
+  min-height: 75px;
+  position: sticky !important;
+  top: 0;
+  z-index: 1030;
+}
+
+/* Premium Hamburger Trigger Component */
+.toggle-sidebar-btn {
+  background: transparent;
+  border: none;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding: 8px;
+}
+
+.burger-bar {
+  width: 20px;
+  height: 2px;
+  background-color: var(--admin-text-main);
+  transition: all 0.2s ease;
+}
+
+.navbar-heading {
+  color: var(--admin-text-secondary);
+  font-size: 0.82rem;
+  letter-spacing: 1.5px;
+  font-weight: 600;
+}
+
+.utility-badge-btn {
+  background-color: var(--admin-surface-bg);
+  border: 1px solid var(--admin-border-line);
+  color: var(--admin-text-secondary);
+  padding: 8px 14px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  border-radius: 10px;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.utility-badge-btn:hover {
+  background-color: var(--admin-surface-bg);
+  border-color: var(--admin-accent-red);
+  color: var(--admin-accent-red);
+  box-shadow: 0 4px 12px rgba(225, 29, 72, 0.08);
+}
+
+.matrix-counter-dot {
+  position: absolute;
+  top: -4px;
+  right: -4px;
+  background-color: var(--admin-accent-red);
+  color: white;
+  font-size: 0.65rem;
+  font-weight: bold;
+  border-radius: 50%;
+  width: 18px;
+  height: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid var(--admin-surface-bg);
+}
+
+.pulse-danger {
+  animation: localStructuralPulse 2s infinite ease-in-out;
+}
+
+/* Droplist Identity Elements Overrides */
+.profile-badge-dropdown {
+  background: var(--admin-surface-bg) !important;
+  border: 1px solid var(--admin-border-line) !important;
+  border-radius: 12px !important;
+  padding: 6px 14px 6px 6px !important;
+  color: var(--admin-text-main) !important;
+  transition: all 0.2s ease !important;
+}
+
+.profile-badge-dropdown:hover {
+  border-color: var(--admin-text-secondary) !important;
+}
+
+.user-name-text, .section-title {
+  color: var(--admin-text-main) !important;
+  font-weight: 600;
+}
+
+.avatar-placeholder {
+  width: 32px;
+  height: 32px;
+  color: white;
+  font-weight: bold;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.admin-avatar {
+  background-color: var(--admin-accent-red);
+}
+
+.profile-custom-dropdown {
+  background-color: var(--admin-surface-bg) !important;
+  border: 1px solid var(--admin-border-line) !important;
+  border-radius: 14px !important;
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08) !important;
+  padding: 8px !important;
+}
+
+.profile-custom-dropdown .dropdown-item {
+  color: var(--admin-text-secondary) !important;
+  border-radius: 8px;
+  padding: 8px 14px;
+  font-size: 0.9rem;
+}
+
+.profile-custom-dropdown .dropdown-item:hover {
+  background-color: var(--admin-accent-glow) !important;
+  color: var(--admin-accent-red) !important;
+}
+
+/* ==========================================================================
+   DISPLAY SYSTEM TELEMETRY METRIC PANELS CARDS & TABLES
+   ========================================================================== */
+.metric-panel-card {
+  background-color: var(--admin-panel-card);
+  border: 1px solid var(--admin-border-line);
+  border-radius: 20px;
+  box-shadow: 0 4px 6px -1px rgba(15, 23, 42, 0.02);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.metric-panel-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px -4px rgba(15, 23, 42, 0.06);
+  border-color: var(--admin-accent-red);
+}
+
+.system-status-badge {
+  background-color: #f1f5f9;
+  color: #475569;
+  padding: 6px 14px;
+  border-radius: 8px;
+  font-weight: 600;
+  border: 1px solid var(--admin-border-line);
+}
+
+.value-display {
+  color: var(--admin-text-main);
+  letter-spacing: -0.5px;
+  font-size: 1.75rem;
+}
+
+.card-icon-badge {
+  font-size: 1.35rem;
+  padding: 8px;
+  background-color: var(--admin-app-bg);
+  border-radius: 10px;
+}
+
+/* Premium Live Data Tables Panels */
+.data-table-panel {
+  background-color: var(--admin-panel-card);
+  border: 1px solid var(--admin-border-line) !important;
+  border-radius: 20px;
+  box-shadow: 0 4px 6px -1px rgba(15, 23, 42, 0.02);
+}
+
+.text-header { color: var(--admin-text-main); }
+
+.custom-pro-table {
+  color: var(--admin-text-main) !important;
+  margin: 0;
+}
+
+.custom-pro-table thead tr th {
+  background-color: var(--admin-table-header-bg) !important;
+  color: var(--admin-text-secondary) !important;
+  font-size: 0.8rem;
+  letter-spacing: 0.5px;
+  padding: 14px;
+  border-bottom: 2px solid var(--admin-border-line) !important;
+}
+
+.custom-pro-table tbody tr td {
+  padding: 16px 14px;
+  border-bottom: 1px solid var(--admin-border-line);
+  background-color: transparent !important;
+}
+
+/* Contextual Status Badges */
+.status-badge-yellow {
+  background-color: rgba(245, 158, 11, 0.08) !important;
+  color: #d97706 !important;
+  padding: 6px 12px !important;
+  border-radius: 6px;
+  font-weight: 600;
+}
+
+.status-badge-blue {
+  background-color: rgba(37, 99, 235, 0.08) !important;
+  color: #2563eb !important;
+  padding: 6px 12px !important;
+  border-radius: 6px;
+  font-weight: 600;
+}
+
+.btn-table-action {
+  background-color: transparent;
+  border: 1px solid var(--admin-border-line);
+  color: var(--admin-text-secondary);
+  font-size: 0.82rem;
+  padding: 6px 12px;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+}
+
+.btn-table-action:hover {
+  border-color: var(--admin-accent-red);
+  color: var(--admin-accent-red);
+  background-color: var(--admin-accent-glow);
+}
+
+/* Action Disconnect Button */
+.btn-pro-danger {
+  background-color: transparent !important;
+  border: 1.5px solid #fee2e2 !important;
+  color: #dc2626 !important;
+  border-radius: 12px !important;
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition: all 0.2s ease-in-out !important;
+}
+
+.btn-pro-danger:hover {
+  background-color: var(--admin-accent-red) !important;
+  color: white !important;
+  box-shadow: 0 4px 12px rgba(225, 29, 72, 0.15);
+  border-color: var(--admin-accent-red) !important;
+}
+
+/* ==========================================================================
+   ANIMATIONS ENGINE DISPATCH CRADLE
+   ========================================================================== */
+.animate-fade-in-view {
+  animation: adminFadeIn 0.55s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-pulse-slow {
+  animation: localSmoothPulse 3s infinite ease-in-out;
+}
+
+@keyframes localStructuralPulse {
+  0% { box-shadow: 0 0 0 0 rgba(225, 29, 72, 0.4); }
+  70% { box-shadow: 0 0 0 8px rgba(225, 29, 72, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(225, 29, 72, 0); }
+}
+
+@keyframes adminFadeIn {
+  from { opacity: 0; transform: translateY(16px) scale(0.99); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@keyframes localSmoothPulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.85; }
+}
+
+/* Responsive Structural Breakpoints Layout Mapping */
+@media (max-width: 768px) {
+  .dashboard-sidebar {
+    position: fixed !important;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    height: 100vh !important;
+    box-shadow: 15px 0 30px rgba(15, 23, 42, 0.08);
+  }
+  
+  .sidebar-hidden {
+    transform: translateX(-100%);
+    margin-left: -280px;
+  }
+}

@@ -1,0 +1,220 @@
+/* ==========================================================================
+   GLOBAL FRAMEWORK CONFIGURATIONS & COMPRESSION LOCKS (NO SCROLL BARS)
+   ========================================================================== */
+.auth-theme-light {
+  height: 100vh;
+  width: 100vw;
+  max-width: 100%;
+  max-height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden !important; /* Prevents vertical and horizontal page scrollbars */
+  position: relative;
+  background-color: #f1f5f9;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+/* Beautiful High-End Motorcycle Garage Backdrop */
+.auth-garage-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  background: 
+    /* linear-gradient(180deg, rgba(241, 245, 249, 0.45) 0%, rgba(203, 213, 225, 0.6) 100%), */
+    /* url('https://images.unsplash.com/photo-1558981806-ec527fa84c39?auto=format&fit=crop&w=1920&q=80'); */
+    url('../../assets/AuthBackground.avif');
+
+  background-size: cover;
+  background-position: center;
+  filter: saturate(0.5) blur(-0.2px); 
+  animation: subtleBgPan 30s ease-in-out infinite alternate;
+}
+
+/* Fluid Abstract Water Particle Underlay */
+.auth-garage-bg::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: 
+    radial-gradient(circle, rgba(37, 99, 235, 0.04) 2px, transparent 2px),
+    radial-gradient(circle, rgba(255, 255, 255, 0.3) 2px, transparent 2px);
+  background-size: 50px 50px, 80px 80px;
+  opacity: 0.9;
+  animation: abstractParticles 25s linear infinite;
+}
+
+/* ==========================================================================
+   TOP COMMON UTILITY BAR NAVIGATION
+   ========================================================================== */
+.auth-top-nav {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 65px;
+  background: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+  z-index: 10;
+}
+
+.auth-top-nav .navbar-brand {
+  font-size: 1.15rem;
+  letter-spacing: 0.5px;
+}
+
+.auth-top-nav .nav-link {
+  color: #475569 !important;
+  transition: all 0.25s ease;
+}
+
+.auth-top-nav .nav-link:hover {
+  color: #2563eb !important;
+  text-shadow: 0 0 10px rgba(37, 99, 235, 0.2);
+}
+
+/* ==========================================================================
+   CRYSTALLINE GLASS & WATER TYPE CARD VIEWPORT
+   ========================================================================== */
+.auth-center-viewport {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  height: calc(90vh - 85px);
+  margin-top: 45px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Frosted Premium Crystal Card with Liquid Shadows */
+.auth-premium-card {
+  background: rgba(255, 255, 255, 0.45) !important;
+  backdrop-filter: blur(0.1px) saturate(10%);
+  -webkit-backdrop-filter: blur(0.1px) saturate(10%);
+  border: 1px solid rgba(255, 255, 255, 0.6) !important;
+  border-radius: 24px !important;
+  /* Deep glossy double shadow system creating a water surface tension effect */
+  box-shadow: 
+    0 4px 30px rgba(0, 0, 0, 0.03), 
+    0 20px 40px -10px rgba(15, 23, 42, 0.08),
+    inset 0 1px 3px rgba(255, 255, 255, 0.5) !important;
+}
+
+.premium-accent-line {
+  width: 40px;
+  height: 3.5px;
+  background: linear-gradient(90deg, #2563eb, #60a5fa);
+  border-radius: 10px;
+  margin-top: 2px;
+  box-shadow: 0 2px 8px rgba(37, 99, 235, 0.3);
+}
+
+/* Input Fields Adjustments - Glossy Translucent Styling */
+.premium-form-input {
+  background-color: rgba(255, 255, 255, 0.35) !important;
+  border: 1px solid rgba(255, 255, 255, 0.5) !important;
+  border-radius: 12px !important;
+  padding: 8px 14px !important;
+  font-size: 0.95rem !important;
+  color: #1e293b !important;
+  transition: all 0.9s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+.premium-form-input::placeholder {
+  color: #94a3b8;
+}
+
+/* Water Droplet Expansion Focus State */
+.premium-form-input:focus {
+  background-color: rgba(255, 255, 255, 0.75) !important;
+  border-color: #2563eb !important;
+  box-shadow: 
+    0 0 0 4px rgba(37, 99, 235, 0.12),
+    0 8px 16px -4px rgba(37, 99, 235, 0.1) !important;
+}
+
+/* Clean High-Contrast Water-Gloss CTA Button */
+.btn-premium-action {
+  background: linear-gradient(135deg, #8feb25 0%, #1d4ed8 100%) !important;
+  color: #ffffff !important;
+  border: none !important;
+  border-radius: 12px !important;
+  font-size: 0.92rem !important;
+  letter-spacing: 0.5px;
+  font-weight: 600;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  box-shadow: 0 4px 14px rgba(37, 99, 235, 0.3) !important;
+}
+
+.btn-premium-action:hover {
+  transform: translateY(-1.5px);
+  box-shadow: 
+    0 8px 20px rgba(37, 99, 235, 0.4),
+    inset 0 1px 2px rgba(255, 255, 255, 0.3) !important;
+  filter: brightness(1.03);
+}
+
+.btn-premium-action:active {
+  transform: translateY(0.5px);
+}
+
+/* Translucent Fluid Status Alerts */
+.alert-custom-danger {
+  background-color: rgba(254, 242, 242, 0.7);
+  backdrop-filter: blur(5px);
+  border: 1px solid rgba(254, 226, 226, 0.8);
+  color: #dc2626;
+  border-radius: 12px;
+  padding: 10px 14px;
+  font-weight: 500;
+}
+
+.alert-custom-success {
+  background-color: rgba(240, 253, 244, 0.7);
+  backdrop-filter: blur(5px);
+  border: 1px solid rgba(220, 252, 231, 0.8);
+  color: #16a34a;
+  border-radius: 12px;
+  padding: 10px 14px;
+  font-weight: 500;
+}
+
+/* ==========================================================================
+   HARDWARE-ACCELERATED ANIMATIONS ENGINE
+   ========================================================================== */
+.animate-fade-up {
+  animation: cleanFadeUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes subtleBgPan {
+  0% { transform: scale(1) translate(0, 0); }
+  100% { transform: scale(1.04) translate(10px, -5px); }
+}
+
+@keyframes abstractParticles {
+  from { background-position: 0 0, 0 0; }
+  to { background-position: 50px 50px, 80px 80px; }
+}
+
+@keyframes cleanFadeUp {
+  from { 
+    opacity: 0; 
+    transform: translateY(25px) scale(0.98); 
+  }
+  to { 
+    opacity: 1; 
+    transform: translateY(0) scale(1); 
+  }
+}
+
+/* Responsive Adaptive Fluid Layout adjustments */
+@media (max-width: 576px) {
+  .auth-premium-card {
+    padding: 32px 24px !important;
+    border-radius: 20px !important;
+  }
+}

@@ -1,0 +1,216 @@
+/* ==========================================================================
+   GLOBAL VARIABLES & SHARED AUTH THEME STRATA
+   ========================================================================== */
+:root {
+  --cyber-bg: #07080b;
+  --cyber-surface: #0e1117;
+  --neon-cyan: #00f0ff;
+  --neon-orange: #ff0055;
+  --text-muted-gray: #62697a;
+  --neon-cyan-glow: rgba(0, 240, 255, 0.25);
+}
+
+/* Base Structural Full Screen Auth Wrappers */
+.cyber-wrapper {
+  background-color: var(--cyber-bg);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Background Cyber Grid Infrastructure Rendering */
+.cyber-grid {
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  top: -50%;
+  left: -50%;
+  background-image: 
+    linear-gradient(rgba(0, 240, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 240, 255, 0.03) 1px, transparent 1px);
+  background-size: 30px 30px;
+  transform: perspective(500px) rotateX(60deg);
+  animation: gridMove 20s linear infinite;
+  pointer-events: none;
+}
+
+/* ==========================================================================
+   GEOMETRIC TECH CARD & FRAMING UTILITIES
+   ========================================================================== */
+.cyber-card {
+  background: var(--cyber-surface) !important;
+  border: 1px solid #1a202c !important;
+  border-radius: 4px !important; /* Sharp corners for modern neo-brutalist styling */
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.7), inset 0 0 15px rgba(0, 240, 255, 0.05) !important;
+  position: relative;
+}
+
+/* High Fidelity Tech Accent Corners */
+.card-corner {
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  border: 2px solid var(--neon-cyan);
+  pointer-events: none;
+}
+.top-left { top: -2px; left: -2px; border-right: none; border-bottom: none; }
+.bottom-right { bottom: -2px; right: -2px; border-left: none; border-top: none; }
+
+/* ==========================================================================
+   TYPOGRAPHY BRANDING & SUB-HEADERS
+   ========================================================================== */
+.tech-badge {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 0.75rem;
+  color: var(--text-muted-gray);
+  letter-spacing: 2px;
+}
+
+.cyber-title {
+  font-weight: 900;
+  letter-spacing: 2px;
+  color: #ffffff;
+}
+
+.neon-text {
+  color: var(--neon-cyan);
+  text-shadow: 0 0 10px var(--neon-cyan-glow);
+}
+
+.laser-line {
+  width: 100px;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--neon-cyan), transparent);
+  margin-top: 15px;
+}
+
+/* ==========================================================================
+   INDUSTRIAL TECH FIELDS & CONTROL ELEMENTS
+   ========================================================================== */
+.cyber-label {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 0.8rem;
+  font-weight: bold;
+  color: var(--text-muted-gray);
+  margin-bottom: 6px;
+  display: block;
+  letter-spacing: 1px;
+}
+
+.input-group-custom {
+  position: relative;
+}
+
+.cyber-input, .cyber-select {
+  background-color: #121620 !important;
+  border: 1px solid #222938 !important;
+  color: #ffffff !important;
+  border-radius: 2px !important;
+  padding: 12px 16px !important;
+  font-size: 0.95rem !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+.cyber-input::placeholder {
+  color: #4a5568;
+}
+
+/* Interactive Focus Glow States */
+.cyber-input:focus, .cyber-select:focus {
+  border-color: var(--neon-cyan) !important;
+  box-shadow: 0 0 15px var(--neon-cyan-glow) !important;
+  background-color: #161b26 !important;
+}
+
+/* High Contrast Neon Action Buttons */
+.btn-cyber {
+  background: transparent;
+  color: var(--neon-cyan);
+  border: 1px solid var(--neon-cyan);
+  border-radius: 2px;
+  letter-spacing: 1.5px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 0 10px rgba(0, 240, 255, 0.1);
+  transition: all 0.2s ease-in-out;
+}
+
+.btn-cyber:hover {
+  background: var(--neon-cyan);
+  color: var(--cyber-bg);
+  box-shadow: 0 0 25px var(--neon-cyan);
+  transform: translateY(-1px);
+}
+
+.btn-cyber:active {
+  transform: translateY(1px);
+}
+
+/* ==========================================================================
+   SYSTEM NOTIFICATION ALERTS & LINKS
+   ========================================================================== */
+.cyber-alert {
+  background-color: rgba(255, 0, 85, 0.1) !important;
+  border: 1px solid var(--neon-orange) !important;
+  color: #ff80a4 !important;
+  font-family: 'Courier New', Courier, monospace;
+  border-radius: 2px;
+}
+
+.account-redirect {
+  font-size: 0.85rem;
+  color: var(--text-muted-gray);
+  letter-spacing: 0.5px;
+}
+
+.cyber-link {
+  color: var(--neon-cyan);
+  transition: all 0.2s ease;
+}
+
+.cyber-link:hover {
+  color: #ffffff;
+  text-shadow: 0 0 8px var(--neon-cyan-glow);
+}
+
+/* ==========================================================================
+   HARDWARE-ACCELERATED PERFORMANCE ANIMATIONS Engine
+   ========================================================================== */
+.animate-reveal {
+  animation: cardReveal 0.45s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+}
+
+.animate-glitch {
+  animation: glitchMicro 0.3s ease-in-out;
+}
+
+@keyframes gridMove {
+  from { background-position: 0 0; }
+  to { background-position: 0 600px; }
+}
+
+@keyframes cardReveal {
+  from {
+    opacity: 0;
+    transform: scale(0.96) translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+@keyframes glitchMicro {
+  0%, 100% { transform: skewX(0deg); }
+  20% { transform: skewX(-3deg); }
+  60% { transform: skewX(3deg); }
+}
+
+/* Mobile Breakpoint Fluid Adaptive Overrides */
+@media (max-width: 576px) {
+  .cyber-card {
+    padding: 25px 20px !important;
+  }
+  .cyber-title {
+    font-size: 1.8rem;
+  }
+}
