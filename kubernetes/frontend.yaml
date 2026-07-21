@@ -18,7 +18,7 @@ spec:
     spec:
       containers:
         - name: frontend
-          image: chhaganp/majisagaraj-frontend-beta:v2.2
+          image: chhaganp/majisagaraj-frontend-beta:v1
           ports:
             - containerPort: 5173
 ---
