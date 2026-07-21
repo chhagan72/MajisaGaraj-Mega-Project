@@ -32,26 +32,31 @@
 # CMD ["npm", "start"]
 
 # ------------------- Stage 1: Build Stage -------------------
-FROM node:21-alpine AS builder
+# ------------------- Stage 1: Build Stage -------------------
+# Upgrade from Node 21 to Node 22 (LTS) to satisfy Vite 8 requirements
+FROM node:22-alpine AS builder
 
 WORKDIR /app
 
+# Copy dependency files first
 COPY package*.json ./
+
+# RUN npm ci ensures native bindings for Alpine (musl) are resolved cleanly
 RUN npm ci
 
 COPY . .
 
-# Compile Vite React app to static bundle in /app/dist
+# Build static assets (Outputs to /app/dist)
 RUN npm run build
 
 # ------------------- Stage 2: Web Server Stage -------------------
 FROM nginx:alpine
 
-# Copy custom/default Nginx configuration if needed
-COPY --from=builder /app/dist /usr/share/nginx/html
+# If you prefer listening on 5173 inside Nginx:
+RUN sed -i 's/listen       80;/listen       5173;/g' /etc/nginx/conf.d/default.conf
 
-# Security Hardening: Change ownership so Nginx can run securely
-RUN chown -R nginx:nginx /usr/share/nginx/html /var/cache/nginx /var/log/nginx
+# Copy static files built from Stage 1
+COPY --from=builder /app/dist /usr/share/nginx/html
 
 EXPOSE 5173
 
