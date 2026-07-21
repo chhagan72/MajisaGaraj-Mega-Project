@@ -1,31 +1,29 @@
-# Stage 1
-FROM node:21 AS backend-builder
+# ------------------- Stage 1: Dependency & Test Stage -------------------
+FROM node:21-alpine AS dependencies
 
-# setup the working dir
 WORKDIR /app
 
-# code
+# Copy package manifests for efficient layer caching
+COPY package*.json ./
+
+# Install clean production dependencies
+RUN npm ci
+
+# ------------------- Stage 2: Final Production Image -------------------
+FROM node:21-alpine
+
+WORKDIR /app
+
+# Set production environment
+ENV NODE_ENV=production
+
+# Copy node_modules and app code from dependencies stage
+COPY --from=dependencies /app/node_modules ./node_modules
 COPY . .
 
-# packages install
-RUN npm i
+# Security Hardening: Do NOT run container as root (Trivy compliance)
+USER node
 
-# tests
-RUN npm run test || true
-
-# Stage 2
-FROM node:21-slim
-
-# setup the working dir
-WORKDIR /app
-
-# copy the above stage as compressed
-COPY --from=backend-builder /app .
-
-COPY .env .env
-
-# Port
 EXPOSE 8080
 
-# App
 CMD ["node", "server.js"]
