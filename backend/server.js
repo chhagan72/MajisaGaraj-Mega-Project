@@ -36,7 +36,7 @@ app.use('/api/tickets', require('./routes/ticketRoutes'));
 app.use('/api/services', require('./routes/serviceRoutes'));
 app.use('/api/products', productRoutes);
 
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 8080;
 app.listen(PORT, () => console.log(`Server executing securely on port ${PORT}`));
 
 // OLD
