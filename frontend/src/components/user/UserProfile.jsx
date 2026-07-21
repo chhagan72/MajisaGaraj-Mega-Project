@@ -83,7 +83,7 @@ const UserProfile = ({ user, onUserUpdate }) => {
         try {
             const token = localStorage.getItem('user_token');
             const res = await axios.put(
-                `http://localhost:5000/api/auth/profile/${targetId}`, 
+                `/api/auth/profile/${targetId}`, 
                 formData,
                 { headers: { Authorization: `Bearer ${token}` } }
             );
@@ -113,7 +113,7 @@ const UserProfile = ({ user, onUserUpdate }) => {
 
         try {
             setLoading(true);
-            const res = await axios.post('http://localhost:5000/api/auth/change-password', {
+            const res = await axios.post('/api/auth/change-password', {
                 email: formData.email,
                 oldPassword: passwordData.oldPassword,
                 newPassword: passwordData.newPassword

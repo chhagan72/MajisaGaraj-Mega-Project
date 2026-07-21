@@ -23,12 +23,12 @@ const TwoWheelerCare = () => {
 
     const fetchDashboardData = async () => {
         try {
-            const slotRes = await axios.get('http://localhost:5000/api/services/slots');
+            const slotRes = await axios.get('/api/services/slots');
             setSlots(slotRes.data.bikeSlots);
 
             if (user.id || user._id) {
                 const targetId = user.id || user._id;
-                const historyRes = await axios.get(`http://localhost:5000/api/services/user/${targetId}`);
+                const historyRes = await axios.get(`/api/services/user/${targetId}`);
                 setHistory(historyRes.data);
             }
         } catch (err) {
@@ -58,7 +58,7 @@ const TwoWheelerCare = () => {
 
         try {
             const payload = { userId: user.id || user._id, ...form };
-            const res = await axios.post('http://localhost:5000/api/services/book', payload);
+            const res = await axios.post('/api/services/book', payload);
             setMessage({ type: 'success', text: res.data.message || 'Maintenance booking dispatched successfully!' });
             setForm({ bikeModel: '', registrationNumber: '', serviceType: 'Routine Tune-Up', partsToReplace: [] });
             fetchDashboardData(); 

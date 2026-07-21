@@ -48,7 +48,7 @@ const AddProduct = () => {
 
         try {
             const completePayload = { ...formData, images };
-            const res = await axios.post('http://localhost:5000/api/products/add', completePayload);
+            const res = await axios.post('/api/products/add', completePayload);
             
             setStatusMsg({ type: 'success', text: res.data.message });
             setFormData({ title: '', price: '', discount: '', category: 'Spares', stock: '', details: '', description: '' });

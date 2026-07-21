@@ -10,7 +10,7 @@ const NotificationCenter = ({ roleContext, userIdContext }) => {
         setLoading(true);
         try {
             // const res = await axios.get(`/api/services/notifications/${userIdContext}`);
-            const res = await axios.get(`http://localhost:5000/api/services/notifications/${userIdContext}`);
+            const res = await axios.get(`/api/services/notifications/${userIdContext}`);
             setNotifications(res.data);
         } catch (err) {
             console.error("Failed to read notification stream.", err);
@@ -28,7 +28,7 @@ const NotificationCenter = ({ roleContext, userIdContext }) => {
     const handleMarkAsRead = async (id) => {
         try {
             // await axios.put(`/api/services/notifications/read/${id}`);
-            await axios.put(`http://localhost:5000/api/services/notifications/read/${id}`);
+            await axios.put(`/api/services/notifications/read/${id}`);
             // Optimistically update read state locally for immediate UX feedback
             setNotifications(notifications.map(n => n._id === id ? { ...n, isRead: true } : n));
         } catch (err) {
@@ -40,7 +40,7 @@ const NotificationCenter = ({ roleContext, userIdContext }) => {
         if (!window.confirm("Are you sure you want to purge all notification payloads from tracking dashboards?")) return;
         try {
             // await axios.delete(`/api/services/notifications/clear/${userIdContext}`);
-            await axios.delete(`http://localhost:5000/api/services/notifications/clear/${userIdContext}`);
+            await axios.delete(`/api/services/notifications/clear/${userIdContext}`);
             setNotifications([]);
         } catch (err) {
             console.error("Failed to clear down notification array indexes.", err);

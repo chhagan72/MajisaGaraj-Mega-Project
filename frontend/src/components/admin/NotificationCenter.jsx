@@ -8,7 +8,7 @@ const NotificationCenter = ({ roleContext, userIdContext }) => {
     const fetchNotifications = useCallback(async () => {
         if (!targetRecipient) return;
         try {
-            const res = await axios.get(`http://localhost:5000/api/services/notifications/${targetRecipient}`);
+            const res = await axios.get(`/api/services/notifications/${targetRecipient}`);
             setLogs(res.data);
         } catch (err) {
             console.error("Failed to parse notifications.", err);
@@ -24,7 +24,7 @@ const NotificationCenter = ({ roleContext, userIdContext }) => {
     // FIX 1: Defined handleClearAllClick to empty out logs via API
     const handleClearAllClick = async () => {
         try {
-            await axios.put(`http://localhost:5000/api/services/notifications/clear/${targetRecipient}`);
+            await axios.put(`/api/services/notifications/clear/${targetRecipient}`);
             setLogs([]);
         } catch (err) {
             console.error("Failed to clear logs", err);
@@ -35,7 +35,7 @@ const NotificationCenter = ({ roleContext, userIdContext }) => {
     const handleReadClick = async (id) => {
         try {
             // Replace with your specific individual update route if available, e.g., `/api/services/notifications/read/${id}`
-            await axios.put(`http://localhost:5000/api/services/notifications/read/${id}`);
+            await axios.put(`/api/services/notifications/read/${id}`);
             // Optimistically update UI local state
             setLogs(prevLogs => prevLogs.map(log => log._id === id ? { ...log, isRead: true } : log));
         } catch (err) {

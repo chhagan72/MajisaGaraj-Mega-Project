@@ -35,7 +35,7 @@ const Register = () => {
 
         setLoading(true);
         try {
-            const res = await axios.post('http://localhost:5000/api/auth/register', formData);
+            const res = await axios.post('/api/auth/register', formData);
             setSuccess(res.data.message || 'Verification OTP sent code channel routing active.');
             setStep(2); // Jump to OTP Code Input view state
         } catch (err) {
@@ -54,7 +54,7 @@ const Register = () => {
         setLoading(true);
 
         try {
-            const res = await axios.post('http://localhost:5000/api/auth/verify-otp', {
+            const res = await axios.post('/api/auth/verify-otp', {
                 email: formData.email,
                 otp: otp
             });

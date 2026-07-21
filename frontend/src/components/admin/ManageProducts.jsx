@@ -15,7 +15,7 @@ const ManageProducts = () => {
 
     const fetchProducts = async () => {
         try {
-            const res = await axios.get('http://localhost:5000/api/products/all');
+            const res = await axios.get('/api/products/all');
             setProducts(res.data);
         } catch (err) {
             console.error("Failed to read system inventory logs.", err);
@@ -25,7 +25,7 @@ const ManageProducts = () => {
     const handleDelete = async (id) => {
         if (!window.confirm("CRITICAL WARNING: Wipe this stock item from active terminal catalogs permanently?")) return;
         try {
-            const res = await axios.delete(`http://localhost:5000/api/products/delete/${id}`);
+            const res = await axios.delete(`/api/products/delete/${id}`);
             setStatusMsg({ type: 'success', text: res.data.message });
             fetchProducts();
         } catch (err) {
@@ -45,7 +45,7 @@ const ManageProducts = () => {
         e.preventDefault();
         setLoading(true);
         try {
-            const res = await axios.put(`http://localhost:5000/api/products/update/${editingProduct._id}`, editingProduct);
+            const res = await axios.put(`/api/products/update/${editingProduct._id}`, editingProduct);
             setStatusMsg({ type: 'success', text: res.data.message });
             setEditingProduct(null);
             fetchProducts();

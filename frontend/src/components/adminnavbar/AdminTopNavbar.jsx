@@ -8,7 +8,7 @@ const AdminTopNavbar = ({ sidebarOpen, setSidebarOpen, user, handleLogout, setAc
     const fetchRadarNotifications = useCallback(async () => {
         try {
             // const res = await axios.get('/api/services/notifications/admin');
-            const res = await axios.get(`http://localhost:5000/api/services/notifications/admin`);
+            const res = await axios.get(`/api/services/notifications/admin`);
             setRadarAlerts(res.data);
         } catch (err) {
             console.error("Failed to read admin radar array nodes.", err);

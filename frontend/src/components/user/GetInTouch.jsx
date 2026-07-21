@@ -58,7 +58,7 @@ const GetInTouch = ({ user }) => {
                 message: formData.message
             };
 
-            const res = await axios.post('http://localhost:5000/api/auth/tickets/create', payload);
+            const res = await axios.post('/api/auth/tickets/create', payload);
 
             if (res.data.success) {
                 setStatus({

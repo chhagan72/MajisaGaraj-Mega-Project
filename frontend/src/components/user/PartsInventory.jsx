@@ -21,7 +21,7 @@ const PartsInventory = ({ currentUser }) => {
     const fetchInventoryCatalog = async () => {
         try {
             setLoading(true);
-            const res = await axios.get('http://localhost:5000/api/products/all');
+            const res = await axios.get('/api/products/all');
             setProducts(res.data);
         } catch (err) {
             console.error("Could not fetch inventory components.", err);
@@ -87,7 +87,7 @@ const PartsInventory = ({ currentUser }) => {
                 comment: reviewForm.comment
             };
 
-            const res = await axios.post(`http://localhost:5000/api/products/${selectedProduct._id}/review`, payload);
+            const res = await axios.post(`/api/products/${selectedProduct._id}/review`, payload);
             
             const updatedProduct = { ...selectedProduct, reviews: res.data.reviews };
             setSelectedProduct(updatedProduct);

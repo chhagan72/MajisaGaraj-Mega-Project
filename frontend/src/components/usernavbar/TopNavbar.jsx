@@ -11,7 +11,7 @@ const TopNavbar = ({ sidebarOpen, setSidebarOpen, user, handleLogout, setActiveT
         if (!targetId) return;
 
         try {
-            const res = await axios.get(`http://localhost:5000/api/services/notifications/${targetId}`);
+            const res = await axios.get(`/api/services/notifications/${targetId}`);
             setAlerts(res.data);
         } catch (err) {
             console.error("Failed to read user notifications.", err);
