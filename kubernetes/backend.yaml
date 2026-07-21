@@ -18,7 +18,7 @@ spec:
     spec:
       containers:
         - name: backend
-          image: chhaganp/majisagaraj-backend-beta:v1.1
+          image: chhaganp/majisagaraj-backend-beta:v1.2
           ports:
             - containerPort: 8080
 ---
