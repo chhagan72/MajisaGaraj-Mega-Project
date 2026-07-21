@@ -97,11 +97,11 @@ pipeline {
             steps{
                 script{
                         dir('backend'){
-                            docker_build("MajisaGaraj-backend-beta","${params.BACKEND_DOCKER_TAG}","chhaganp")
+                            docker_build("majisagaraj-backend-beta","${params.BACKEND_DOCKER_TAG}","chhaganp")
                         }
                     
                         dir('frontend'){
-                            docker_build("MajisaGaraj-frontend-beta","${params.FRONTEND_DOCKER_TAG}","chhaganp")
+                            docker_build("majisagaraj-frontend-beta","${params.FRONTEND_DOCKER_TAG}","chhaganp")
                         }
                 }
             }
@@ -110,8 +110,8 @@ pipeline {
         stage("Docker: Push to DockerHub"){
             steps{
                 script{
-                    docker_push("MajisaGaraj-backend-beta","${params.BACKEND_DOCKER_TAG}","chhaganp") 
-                    docker_push("MajisaGaraj-frontend-beta","${params.FRONTEND_DOCKER_TAG}","chhaganp")
+                    docker_push("majisagaraj-backend-beta","${params.BACKEND_DOCKER_TAG}","chhaganp") 
+                    docker_push("majisagaraj-frontend-beta","${params.FRONTEND_DOCKER_TAG}","chhaganp")
                 }
             }
         }
