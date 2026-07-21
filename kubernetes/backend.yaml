@@ -18,7 +18,7 @@ spec:
     spec:
       containers:
         - name: backend
-          image: chhaganp/wanderlust-backend-beta:v2.1
+          image: chhaganp/MajisaGaraj-backend-beta:v2.1
           ports:
             - containerPort: 8080
 ---

@@ -32,7 +32,7 @@ pipeline {
         stage('Git: Code Checkout') {
             steps {
                 script{
-                    code_checkout("https://github.com/chhagan72/Wanderlust-Mega-Project.git","main")
+                    code_checkout("https://github.com/chhagan72/MajisaGaraj-Mega-Project.git","main")
                 }
             }
         }
@@ -97,11 +97,11 @@ pipeline {
             steps{
                 script{
                         dir('backend'){
-                            docker_build("wanderlust-backend-beta","${params.BACKEND_DOCKER_TAG}","chhaganp")
+                            docker_build("MajisaGaraj-backend-beta","${params.BACKEND_DOCKER_TAG}","chhaganp")
                         }
                     
                         dir('frontend'){
-                            docker_build("wanderlust-frontend-beta","${params.FRONTEND_DOCKER_TAG}","chhaganp")
+                            docker_build("MajisaGaraj-frontend-beta","${params.FRONTEND_DOCKER_TAG}","chhaganp")
                         }
                 }
             }
@@ -110,8 +110,8 @@ pipeline {
         stage("Docker: Push to DockerHub"){
             steps{
                 script{
-                    docker_push("wanderlust-backend-beta","${params.BACKEND_DOCKER_TAG}","chhaganp") 
-                    docker_push("wanderlust-frontend-beta","${params.FRONTEND_DOCKER_TAG}","chhaganp")
+                    docker_push("MajisaGaraj-backend-beta","${params.BACKEND_DOCKER_TAG}","chhaganp") 
+                    docker_push("MajisaGaraj-frontend-beta","${params.FRONTEND_DOCKER_TAG}","chhaganp")
                 }
             }
         }
@@ -119,7 +119,7 @@ pipeline {
     post{
         success{
             archiveArtifacts artifacts: '*.xml', followSymlinks: false
-            build job: "Wanderlust-CD", parameters: [
+            build job: "MajisaGaraj-CD", parameters: [
                 string(name: 'FRONTEND_DOCKER_TAG', value: "${params.FRONTEND_DOCKER_TAG}"),
                 string(name: 'BACKEND_DOCKER_TAG', value: "${params.BACKEND_DOCKER_TAG}")
             ]
